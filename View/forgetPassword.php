@@ -95,7 +95,7 @@
       <p>Copyright &copy; 2025 HealWell. All rights reserved.</p>
     </footer>
     <script src="script/sharedScript.js"></script>
-    <!-- <script>
+    <script>
       document.getElementById('btn-id').addEventListener('click',(e)=>{
         e.preventDefault()
         const email= getFieldText("email-id")
@@ -143,9 +143,10 @@
         if(isValid)
         {
           alert('Password has Changed. Go back to login')
+          document.querySelector("form").submit();
         }
 
       })
-    </script> -->
+    </script>
   </body>
 </html>

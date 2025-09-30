@@ -73,8 +73,9 @@
                         exit(); 
                     } else {
                         $_SESSION['e3'] = "UserEmail or password does not match"; 
+                        header($errorURL); 
                         } 
                     }
-                    header($errorURL); 
+                    
                     exit(); 
 ?>

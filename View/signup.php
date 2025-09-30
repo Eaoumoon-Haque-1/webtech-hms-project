@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patient Registration</title>
   <link rel="stylesheet" href="style/signup.css">
+  <script>
+        function showHint() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET", "getHints.php", true);
+        xmlhttp.send();
+      }
+
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -98,8 +111,9 @@
       <!-- 🔑 Password -->
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="pass-id" name="password" placeholder="Enter password" >
+        <input type="password" id="pass-id" name="password" placeholder="Enter password" onfocus="showHint()" >
         <br>
+        <p>Suggestions: <span id="txtHint"></span></p>
         <b><span id="pass-span"></span></b>
         <span><?php echo $_SESSION['e8'] ?? ''  ?></span>
       </div>
@@ -122,7 +136,7 @@
   <footer>
   <p>Copyright &copy; 2025 HealWell All rights reserved.</p>
   </footer>
-  <!-- <script src="script/sharedScript.js"></script>
+  <script src="script/sharedScript.js"></script>
   <script>
     document.getElementById("btn-id").addEventListener('click',(e)=>{
         e.preventDefault()
@@ -236,8 +250,9 @@
 
         if(isValid){
             alert("Registration Successful, Go back to LogIN")
+            document.querySelector("form").submit();
         }
     })
-  </script> -->
+  </script>
 </body>
 </html>

@@ -26,16 +26,24 @@
                   $errorURL .= "&e2=";
                 }
             if ($isValid) {
-            
-                header($successURL);
-                exit();
-            }
-            else {
-                
-                
-            }
-            
-            header($errorURL);
+        require '../model/complainDB.php';
+
+        $sql = "INSERT INTO complaint (sub, details) 
+                VALUES ('$sub', '$details')";
+
+        if (mysqli_query($conn, $sql)) {
+            // Success
+            header("Location: ../View/bookAppointment.php?success=1");
             exit();
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+    } else {
+        header("Location: ../View/bookAppointment.php");
+        exit();
+    }
+            
             }
 ?>

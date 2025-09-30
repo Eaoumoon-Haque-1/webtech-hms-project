@@ -1,24 +1,3 @@
-<!-- <?php 
-
-function credentials($username, $password) {
-
-	if ($username === "admin" and $password = "123") {
-		return true;
-	}
-
-	return false;
-
-}
-
-function exists($username) {
-	if ($username === "admin") {
-		return true;
-	}
-
-	return false;
-}
-
-?>  -->
 <?php
 $servername = "localhost";
 $username = "root";

@@ -63,7 +63,7 @@
     <p>Copyright &copy; 2025 HealWell. All rights reserved.</p>
   </footer>
   <script src="script/sharedScript.js"></script>
-  <!-- <script>
+  <script>
         document.getElementById("btn-id").addEventListener('click',(e)=>{
         e.preventDefault()
         const email= getFieldText("email-id")
@@ -80,10 +80,12 @@
             span("email-span","Invalid Email Address")
             isValid=false
         } 
-        else if(email != "eaou@gmail.com"){
-            span("email-span","Wrong Email Address")
-            isValid=false
-        }else {
+        // else if(email != "eaou@gmail.com"){
+        //     span("email-span","Wrong Email Address")
+        //     isValid=false
+        //}
+        
+        else {
             span("email-span","")
         }
 
@@ -92,18 +94,20 @@
             span("pass-span","Password must be 8+ chars, include uppercase, lowercase & number")
             isValid=false
         }
-        else if(pass !== "eaoumooN1"){
-            span("pass-span","Wrong Password")
-            isValid=false
-        } else {
+        // else if(pass !== "eaoumooN1"){
+        //     span("pass-span","Wrong Password")
+        //     isValid=false
+        // }
+         else {
             span("pass-span","")
         }
         if(isValid){
             alert("login Successful")
-            window.location.href = "home.php";
+            //window.location.href = "../Controller/loginAcController.php";
+            document.querySelector("form").submit();
         }
     })
-  </script> -->
+  </script>
 
 </body>
 </html>

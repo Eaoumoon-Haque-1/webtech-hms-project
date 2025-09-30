@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,10 +35,10 @@
     <div class="content">
       <div class="form-container">
         <h2><i class="bi bi-calendar-check"></i> Book an Appointment</h2>
-        <form>
+        <form action="../Controller/appointment.php" method="GET">
           <div class="form-group">
             <label for="doctor">Choose Doctor</label>
-            <select id="doctor-id" required>
+            <select id="doctor-id" name="dName">
               <option value="">-- Select Doctor --</option>
               <option>Dr. John Smith (Cardiologist)</option>
               <option>Dr. Emily Carter (Pediatrician)</option>
@@ -53,21 +51,21 @@
 
           <div class="form-group">
             <label for="date">Preferred Date</label>
-            <input type="date" id="date-id" required>
+            <input type="date" id="date-id" name="date">
             <br>
           <b><span id="date-span"></span></b>
           </div>
 
           <div class="form-group">
             <label for="time">Preferred Time</label>
-            <input type="time" id="time-id" required>
+            <input type="time" id="time-id" name="time">
             <br>
           <b><span id="time-span"></span></b>
           </div>
 
           <div class="form-group">
             <label for="reason">Reason for Appointment</label>
-            <textarea id="reason-id" placeholder="Briefly describe your health issue..."></textarea>
+            <textarea id="reason-id" placeholder="Briefly describe your health issue..." name="reason"></textarea>
             <br>
             <b><span id="reason-span"></span></b>
           </div>
@@ -121,6 +119,7 @@
     if(isValid)
     {
       alert('Appointment Request Sent')
+      e.target.closest('form').submit();
     }
 
     })

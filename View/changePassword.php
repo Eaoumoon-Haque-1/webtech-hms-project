@@ -58,7 +58,7 @@
       <p>Copyright &copy; 2025 HealWell. All rights reserved.</p>
     </footer>
   <script src="script/sharedScript.js"></script>
-  <!-- <script>
+  <script>
     document.getElementById("btn-id").addEventListener('click',(e)=>{
       e.preventDefault()
           const current= getFieldText("current-pass")
@@ -103,9 +103,10 @@
         }
         if(isValid){
             alert("Password changed Successfully, Login again")
+            document.querySelector("form").submit();
           }
 
     })
-  </script> -->
+  </script>
 </body>
 </html>

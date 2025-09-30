@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,7 @@
     </div>
   </div>
   <script src="script/sharedScript.js"></script>
-  <!-- <script>
+  <script>
     document.getElementById("btn-id").addEventListener('click',(e)=>{
       e.preventDefault()
       const complaint= getFieldText("com-id")
@@ -68,26 +69,27 @@
 
     if(complaint==="")
     {
-      span("com-span","Complete this text")
+      //span("com-span","Complete this text")
       isValid=false
     }else{
-      span("com-span","")
+      //span("com-span","")
     }
     if(detail=="")
     {
-      span("detail-span","Complete this field")
+      //span("detail-span","Complete this field")
       isValid=false
     }else{
-      span("detail-span","")
+      //span("detail-span","")
     }
 
     if(isValid)
     {
       alert('Complaint received successfully')
+      e.target.closest('form').submit();
     }
 
     })
     
-  </script> -->
+  </script>
 </body>
 </html>
